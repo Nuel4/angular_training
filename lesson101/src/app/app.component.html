@@ -1,0 +1,152 @@
+<div class="container">
+  <input type="text" [(ngModel)] ="name">
+  <p>{{name}}</p>
+  <h3 style="text-align:center;">i am in the app component</h3>
+</div>
+
+<app-servers></app-servers>
+
+<br>
+
+<div class="ser">
+  <hr>
+  <ol>
+    <li>Add a button which says 'display Details'</li>
+    <li>Add a paragraph with any content of your choice (eg. 'secret password =Tuna') </li>
+     <li>Toggle the displaying of that paragraph with the button created in the first step </li>
+     <li>Log all button clicks  in an array and output that array below the secret paragraph
+       (may be log a timestamp or simply an increamenting number)
+     </li>
+     <li>Starting at the 5th log item ,give all future log items a blue background
+       (via ngStyle and white color (ngClass))
+     </li>
+  </ol> 
+  </div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col xs-12">
+      <app-warning-alert></app-warning-alert>
+      <app-success-alert></app-success-alert>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col xs-12">
+      <app-server></app-server>
+   </div></div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col xs-12">
+          <app-servers></app-servers>
+          </div></div></div>
+
+
+
+
+           <ol>
+        <li>Add an input field which updates a property ('username') via a-way-bidding</li>
+        <li>Output the user name property via string interpolation (in a paragraph below the input)</li>
+        <li>Add a button which may be clicked if the user name is Not an empty string</li>
+        <li>Upon clicking the button , the user name should be reset to empty string</li>
+      </ol>
+      <hr>
+      <h2>Data Binding</h2>
+      <div class="container">
+
+      <label>Username</label>
+      <div class="row">
+        <div class="col xs-12">
+         <input type="text" class="form-control" [(ngModel)] ="userName">
+         <p>{{userName}}</p>
+         <button class="btn btn-primary" [disabled] ="userName ==='' " (click)="userName ='' ">Reset Username</button>
+    </div></div>
+    <hr>
+    <!--<app-servers></app-servers>-->
+
+
+<hr>
+
+    <hr>
+
+    <div class="container">
+      <div class="row">
+        <div class="col xs-7">
+      <hr>
+      <ol>
+        <li>Add a button which says 'display Details'</li>
+        <li>Add a paragraph with any content of your choice (eg. 'secret password =Tuna') </li>
+         <li>Toggle the displaying of that paragraph with the button created in the first step </li>
+         <li>Log all button clicks  in an array and output that array below the secret paragraph
+           (may be log a timestamp or simply an increamenting number)
+         </li>
+         <li>Starting at the 5th log item ,give all future log items a blue background
+           (via ngStyle and white color (ngClass))
+         </li>
+      </ol> 
+      <button class="btn btn-primary" (click) ="showSecret = !showSecret">Display Detail</button>
+      <p *ngIf="showSecret">Secret Password =tuna</p>
+<br><hr>
+      <div>
+      <button class="btn btn-primary" (click) ="onToggleDetail()">Display Quantity</button>
+      <p *ngIf="showSecret">Secret Password =tuna</p>
+      <p *ngFor="let logItem of log ;let i =index" [ngStyle]="{backgroundColor :i >5 ? 'blue' :'red'}"
+         [ngClass]="{ 'white-text' : i >5 } ">
+    
+        {{logItem}}</p>
+</div>
+</div>
+</div>
+    </div>
+    <br><br>
+ <div class="container">
+<div class="row">
+  <div class="col-xs-12">
+    <br>
+    <button class="btn btn-primary" (click) ="onlyOdd =!onlyOdd ">Show odd numbers</button>
+    <br>
+    <ul class="list-group">
+      <div *ngIf="onlyOdd">
+      <li class="list-group-item" [ngClass] ="{odd: odd}" *ngFor ="let odd of oddNumbers">
+                                                    <!--odd %2 !== 0 -->
+        <p>{{odd}}</p>
+
+      </li>
+      </div>
+
+     <div *ngIf="!onlyOdd">
+        <li class="list-group-item" [ngClass] ="{even: even % 2 ==0}" *ngFor ="let even of evenNumbers">
+          <p>{{even}}</p>
+  
+        </li>
+        </div>
+
+        
+      <div *ngappUnless="onlyOdd">
+        <li class="list-group-item" [ngClass] ="{even: even % 2 ==0}" *ngFor ="let even of evenNumbers">
+          <p>{{even}}</p>
+  
+        </li>
+        </div>
+    </ul>
+    <br>
+    <hr>
+    <div [ngSwitch] ="value">
+      <p *ngSwitchCase="5">value is 5</p>
+      <p *ngSwitchCase="10">value is 10</p>
+      <p *ngSwitchCase="100">value is 100</p>
+      <p *ngSwitchDefault>value is default</p>
+
+    </div>
+    <hr><br>
+    <p appBasicHighlight>Styling with basic directive</p>
+    <br>
+    <p appBetterHighlight>Styling with better directive</p>
+
+  </div>
+</div>
+</div>

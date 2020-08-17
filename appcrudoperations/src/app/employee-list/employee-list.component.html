@@ -1,0 +1,30 @@
+<p>employee-list works!</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Employee List</h2>
+    </div>
+</div>
+<div class="panel-body">
+    <table class="table tabel-striped">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor ="let employee of employees | async"> 
+            <td>{{employee.FirstName}}</td>
+            <td>{{employee.LastName}}</td>
+            <td>{{ employee.EmailId}}</td>
+            <td>{{ employee.Action }}</td>
+            <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button></td>
+            <td><button (click) ="upDateEmployee(employee.id)" class="btn btn-info" style="margin-left: 40px;">Update</button></td>
+            <td><button (click) ="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 40px;">Details</button></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>

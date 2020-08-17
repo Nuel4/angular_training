@@ -1,0 +1,22 @@
+<p>navbar works!</p>
+<mat-toolbar color ="primary" class="mat-elevation-z8">
+    <span><mat-icon>account_balance</mat-icon>NuelsApp</span>
+
+    <div class="spacer"></div>
+    <a  mat-button routerLink ="home">Home</a>
+    <a mat-button routerLink ="about">About</a>
+    <a mat-button routerLink ="products">Products</a>
+    <a  mat-button routerLink ="services">Services</a>
+    <a  mat-button routerLink ="contacts">Contact</a>
+    <a mat-raised-button color="accent" routerLink ="singup">Sign Up</a>
+    </mat-toolbar>
+    <br>
+
+    <div [@popOverState] ='stateName'>
+        <p> <img src="assets/images/anularfirebase.png" width="50px"></p>
+        <p> Hello ,i am a helpful message</p>
+
+    </div>
+    <button (click) ="toggle()">Toggle popOver</button>
+
+    

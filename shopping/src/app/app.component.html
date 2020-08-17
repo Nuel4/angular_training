@@ -1,0 +1,23 @@
+<h2><app-header></app-header></h2>
+<!--featuredSelected is defined in headerCompo-->
+<div class="container">
+  <div class="row">
+    <div class="col md-12">
+
+      <router-outlet></router-outlet>
+  </div>
+</div>
+</div>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-active-users></app-active-users>
+      <app-inactive-users></app-inactive-users>
+    </div>
+<!--Optimize this app by adding a USERSERVICE which manages  active and inactive users
+Also ,add a COUNTER-SERVICE which active -> inactive users and inactive -> active-->
+
+  </div>
+</div>

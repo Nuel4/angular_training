@@ -1,0 +1,26 @@
+<div class="container">
+  <!--(serverCreated) any variable for an event onServerCreated($even)  from cockpitCompo .pass $event into it-->
+ <app-cockpit (serverCreated) ="onServerAdded($event)"
+ (blueprintCreated) ="onBlueprintAdded($event)"></app-cockpit>
+<!--(blueprintCreated) any variable for an event onblueprintCreated($even)  from cockpitCompo .pass $event into it-->
+ 
+ <hr>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-primary "(click) ="onChangeFirst()">Change First Element</button>
+    <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
+    <app-server-element *ngFor ="let serverElement of serverElements"
+    [srvElement] ="serverElement" [name] ="serverElement.name">
+    <!-- the variable passed in input('srvElement') server-element = srvElement from appCompo-->
+    <div class="panel-body">
+      <p>
+        <strong *ngIf ="serverElement.type === 'server' " style="color: red;">{{ serverElement.content }}</strong>
+        <em *ngIf ="serverElement.type === 'blueprint' ">{{ serverElement.content }}</em>
+      </p>
+    </div>
+  </app-server-element>
+</div>
+
+</div>
+</div>
+

@@ -1,0 +1,42 @@
+<div>
+    <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+    <p [innerText] ="allowNewServer"></p>
+
+</div>
+
+<div class="container">
+    <p>servers contents!</p>
+    <app-server *ngFor="let sev of servers"></app-server>
+    <!--<app-server></app-server>-->
+</div>
+
+<div class="container">
+    <p>Property binding</p>
+    <div class="row">
+        <div class="col xs-5">
+            <!--can use this when it's not dynamic<button class="btn btn-primary" disabled>Add Server</button>-->
+            <button class="btn btn-primary" [disabled]="!allowNewServer" (click) ="onCreateServer()">Add Server</button>
+            <p>{{allowNewServer}}</p>
+              
+     
+        </div>
+    </div>
+</div>
+<p>{{serverCreationStatus}}</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col xs-12">
+            <label>Server</label>
+            <input type="text" class="form-control" [(ngModel)]="serverName" >
+            <input type="text" class="form-control"  (input) ="upDateServerName($event)">
+            <p>{{serverName}}</p>
+        </div>
+    </div>
+    <p *ngIf="serverCreated ; else noServer">Server was created, the server nmae is {{serverName}}</p>
+    <ng-template #noServer>
+        <p style="color: red;">No server created</p>
+
+    </ng-template>
+</div>
+

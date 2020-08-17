@@ -1,0 +1,13 @@
+.container{
+    margin-top: 30;
+}
+/*input.ng-invalid{       
+    border: 1px solid red;
+
+}*/
+
+
+input.ng-invalid.ng-touched{       /* to show difference when  touched */
+    border: 1px solid red;
+
+}

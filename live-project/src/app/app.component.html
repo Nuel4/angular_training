@@ -1,0 +1,60 @@
+
+
+<!--- <div style="text-align: center;"> 
+      <h1>
+        {{ title }}
+      </h1>
+
+      <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+    </div>
+    <hr>
+<div style="text-align: center;">
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+  </form>
+  
+</div>
+    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>-->
+<div class="container">
+  <h3 class="d-flex justify-content-center">Angular 8 with API demo</h3>
+  <h5 class="d-flex justify-content-center">Employee Management Portal</h5>
+  <nav class="navbar navbar-expand-sm bg-light narbark-dark ">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button class="m-1 btn btn-light btn-outline-primary" button
+        label="DeptScreen"  (click) ="DeptScreen=true; EmpScreen=false;">Departments</button>
+      
+      </li>
+
+      <li class="nav-item">
+        <button class="m-1 btn btn-light btn-outline-primary" button
+        label="EmpScreen" (click) ="DeptScreen=false; EmpScreen=true;">Employee</button>
+        
+      </li>
+    </ul>
+  </nav>
+
+  <app-department *ngIf="DeptScreen"></app-department>
+  <app-employee *ngIf="EmpScreen"></app-employee>
+
+
+</div>
+    
